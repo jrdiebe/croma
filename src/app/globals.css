@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/obviously/fonnts.com-Obviously.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/obviously/fonnts.com-Obviously_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Obviously-Wide';
+  src: url('/fonts/obviously/fonnts.com-Obviously_Extd_Bold_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Obviously-Wide';
+  src: url('/fonts/obviously/fonnts.com-Obviously_Extd.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --bg-dark: #0a0a0a;
+    --croma-green: #1b5a2d;
+    --croma-green-light: #5a873c;
+    --croma-orange: #e63812;
+    --croma-orange-vibrant: #f47820;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #e5e5e5;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  /* Grafismo geométrico sutil em background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('/grafismos/Asset 1@2x.png');
+    background-repeat: repeat;
+    background-size: 500px;
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  h1, h2, h3, h4, .font-title {
+    font-family: 'Obviously', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-nav {
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-button-green {
+    background: linear-gradient(135deg, rgba(27, 90, 45, 0.8) 0%, rgba(90, 135, 60, 0.6) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(90, 135, 60, 0.4);
+    box-shadow: 0 8px 30px rgba(27, 90, 45, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .glass-button-green:hover {
+    box-shadow: 0 12px 35px rgba(90, 135, 60, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .glass-button-orange {
+    background: linear-gradient(135deg, rgba(230, 56, 18, 0.85) 0%, rgba(244, 120, 32, 0.65) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(244, 120, 32, 0.4);
+    box-shadow: 0 8px 30px rgba(230, 56, 18, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .glass-button-orange:hover {
+    box-shadow: 0 12px 35px rgba(244, 120, 32, 0.5);
+    transform: translateY(-2px);
+  }
+}
